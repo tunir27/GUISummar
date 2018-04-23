@@ -1,0 +1,54 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+	{% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+   	<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+   	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ </head>
+<body> 
+<section id="contact">
+			<div class="section-content">
+				<h1 class="section-header"> <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">Text Summarizer</span></h1>
+				
+			</div>
+			<div class="contact-section">
+			<div class="container">
+				<form style="padding-left:250px" name="SummaryForm" method="POST" action="">
+					<div class="form-group">
+			  				<label for ="description"> Input Text</label>
+			  			 	<textarea  style="colour:black" class="form-control" name="input_text" placeholder="Enter the text to be Summarized" required>{{ input_text }}</textarea>
+			  			</div>
+
+						{% csrf_token %}
+						<div style="padding-left:200px">
+							<div class="col-md-4" style="width:200px">
+							<select class="form-control" name="option" required>
+							<option value="" SELECTED>Choose Option
+							{% for i in options %}
+							<option value="{{ i }}">{{ i }}</option>
+							{% endfor %}
+							</select>
+							</div>
+						</div>
+						<div>
+			  				<button type="submit" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>Submit</button>
+			  			</div>
+						</form>
+			  		<div class="col-md-10" style="padding-left:250px;padding-top:50px">
+			  			<div class="form-group">
+			  				<label for ="description">Result</label>
+			  			 	<textarea  style="colour:black" class="form-control" id="description" >{{ summary }}</textarea>
+			  			</div>
+			  			
+			  			
+					</div>
+			</div>
+		</section>
+		</body>
+		</html>

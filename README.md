@@ -1,0 +1,2 @@
+# GUISummar
+WebGUI Summarization Tool.

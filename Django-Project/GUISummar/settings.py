@@ -81,6 +81,8 @@ DATABASES = {
     }
 }
 INFLUX_DB="GUISummar"
+AUTO_SUMMARY_TIME="30"
+AUTO_SUMMARY_ALGO="Sumy Text Rank"
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

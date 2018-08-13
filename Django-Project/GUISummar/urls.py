@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from summar.views import SummarView
+from summar.views import SummarView,DSummarView,ParameterView,Auto_SummaryView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summary/',SummarView, name='Dashboard'),
+    path('dsummary/',DSummarView,name='DBSummary'),
+    path('parameter/',ParameterView,name='Parameter'),
+    path('asummary/',Auto_SummaryView,name='Auto Summary')
 ]
